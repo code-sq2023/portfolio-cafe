@@ -11,6 +11,7 @@ $(function() {
     centerPadding: '10%',
     speed: 700,
     arrows: false,
-    draggable: false
+    draggable: false,
+    pauseOnHover:false,
   })
 });

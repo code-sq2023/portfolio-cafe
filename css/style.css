@@ -92,13 +92,14 @@ mainvisual
 
 .slick-slide {
   width: 100%;
-  max-height: 500px;
+  max-height: 450px;
 }
 
-.slick-slide img {
+.mainvisual-item img {
   width: 100%;
+  max-height: 450px;
   object-fit: cover;
-  object-position: center;
+  object-position: center 20%;
 }
 
 /*********************************************************************
@@ -116,5 +117,135 @@ about
   line-height: 1.3;
 }
 
-.about-text {
+/*********************************************************************
+news
+*********************************************************************/
+
+#news {
+  padding: 120px 0;
+}
+.news-item {
+  border-bottom: 1px dotted #333;
+  list-style: none;
+}
+.news-item:nth-child(1) {
+  border-top: 1px dotted #333;
+}
+
+.news-item a {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 2;
+}
+
+.date {
+  margin-right: 20px; 
+}
+
+/*********************************************************************
+bg
+*********************************************************************/
+
+.bg {
+  background: url("../img/bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;
+}
+
+/*********************************************************************
+menu
+*********************************************************************/
+
+#menu {
+  padding: 120px 0;
+}
+
+.menu-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 250px 1fr 1fr;
+  grid-template-areas: 
+  "menu1 menu2"
+  "menu1 menu3"
+  "menu4 menu4"
+  "menu5 menu6"
+  "menu7 menu6"
+  ;
+}
+.menu img{
+  object-fit: cover;
+  height: 100%;
+}
+.menu1 {
+  grid-area: menu1;
+}
+
+.menu2 {
+  grid-area: menu2;
+}
+
+.menu3 {
+  grid-area: menu3;
+}
+
+.menu4 {
+  grid-area: menu4;
+}
+
+.menu5 {
+  grid-area: menu5;
+}
+
+.menu6 {
+  grid-area: menu6;
+}
+
+.menu7 {
+  grid-area: menu7;
+}
+
+.more-btn {
+  text-align: right;
+  margin: 30px 20px 0 0;
+}
+
+.more-btn a {
+  font-family: "Antonio", sans-serif;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  padding: 5px 0;
+  width: 160px;
+  text-align: center;
+  visibility: middle;
+}
+
+.more-btn a::before,
+.more-btn a::after{
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease-in;
+}
+
+.more-btn a:hover::before,
+.more-btn a:hover::after{
+  width: 0;
+}
+.more-btn a::before{
+  top: 0;
+  left: 0;
+}
+
+.more-btn a::after{
+  bottom: 0;
+  right: 0;
 }
