@@ -17,6 +17,9 @@ img {
 a {
   text-decoration: none;
 }
+ ul {
+  list-style: none;
+ }
 
 .container {
   max-width: 1080px;
@@ -92,14 +95,14 @@ mainvisual
 
 .slick-slide {
   width: 100%;
-  max-height: 450px;
+  max-height: 500px;
 }
 
 .mainvisual-item img {
   width: 100%;
-  max-height: 450px;
+  max-height: 500px;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 30%;
 }
 
 /*********************************************************************
@@ -123,13 +126,14 @@ news
 
 #news {
   padding: 120px 0;
+  background-color: #FFF;
 }
 .news-item {
-  border-bottom: 1px dotted #333;
-  list-style: none;
+  border-bottom: 1px solid #CCC;
+  padding: 20px;
 }
 .news-item:nth-child(1) {
-  border-top: 1px dotted #333;
+  border-top: 1px solid #CCC;
 }
 
 .news-item a {
@@ -161,7 +165,8 @@ menu
 *********************************************************************/
 
 #menu {
-  padding: 120px 0;
+  padding-top: 120px;
+  background-color: #FFF;
 }
 
 .menu-block {
@@ -223,7 +228,7 @@ menu
   padding: 5px 0;
   width: 160px;
   text-align: center;
-  visibility: middle;
+  line-height: 1.6;
 }
 
 .more-btn a::before,
@@ -248,4 +253,135 @@ menu
 .more-btn a::after{
   bottom: 0;
   right: 0;
+}
+
+
+/*********************************************************************
+shop info
+*********************************************************************/
+
+#shop-info {
+  padding: 120px 0;
+  background-color: #FFF;
+}
+
+.shop-info-inner{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.shop-info-img {
+  width: 35%;
+}
+
+.shop-info-list {
+  width: 60%;
+}
+.shop-info-item:nth-child(1) {
+  border-top: 1px solid #CCC;
+}
+.shop-info-item{
+  border-bottom: 1px solid #CCC;
+}
+.shop-info-text {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+dt {
+  width: 30%;
+  padding: 15px 0;
+}
+dd {
+  width:  70%;
+  padding: 15px 0;
+}
+
+.map {
+  position: relative;
+  padding-top: 30%;
+  height: 0;
+}
+
+iframe {
+  position: absolute;
+  width: 100%;
+  max-height: 300px;
+  top: 0;
+  left: 0;
+}
+
+
+/*********************************************************************
+shop info
+*********************************************************************/
+footer {
+  background-color: #FFF;
+  padding-bottom: 30px;
+}
+.footer-top-img {
+  background-image: url("../img/footer.jpg");
+  background-size: cover;
+  background-position: 50% 70%;
+  width: 100%;
+  height: 250px;
+  box-shadow: inset 0px 18px 10px -10px #FFF;
+  margin-bottom: 30px;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-nav-list {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.footer-nav-item a{
+  font-family: "Antonio", sans-serif;
+  font-size: 1rem;
+  color: #16335B;
+  transition: all 0.3s linear;
+  opacity: 1;
+}
+
+.footer-nav-item a:hover {
+  opacity: 0.7;
+}
+
+.sns-list{
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.sns-item{
+  width:40px;
+  height: 40px;
+}
+
+.sns-item a{
+  display: inline-block;
+  height: 100%;
+  transition: all 0.3s linear;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.sns-item a:hover{
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+.sns-item a img {
+  width: 100%;
+  height: 100%;
+}
+
+.copyright {
+  font-size: 0.625rem;
+  text-align: center;
 }
