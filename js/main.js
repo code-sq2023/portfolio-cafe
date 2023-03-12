@@ -1,11 +1,13 @@
 $(function() {
   
   //ヘッダーを途中から固定する
-  let AboutPos = $(".mainvisual").offset().top;
-  let mainvisualHeight = $(".mainvisual").outerHeight();
-  let referencePos = AboutPos + (mainvisualHeight / 4);
-  $(window).on("scroll", () => {
+  
+  let headerShow = () => {
+    let AboutPos = $(".mainvisual").offset().top;
+    let mainvisualHeight = $(".mainvisual").outerHeight();
+    let referencePos = AboutPos + mainvisualHeight;
     let currentPos = $(this).scrollTop();
+    
     if(currentPos > referencePos) {
       $(".fix-header").addClass("show");
       $(".return-btn").addClass("show");
@@ -13,6 +15,13 @@ $(function() {
       $(".fix-header").removeClass("show");
       $(".return-btn").removeClass("show");
     }
+  }
+  $(window).on("load resize", () => {
+    headerShow();
+  });
+  
+  $(window).on("scroll", () => {
+    headerShow();
   });
 
   //リンクをクリックするとそのセクショントップまでスクロースする
