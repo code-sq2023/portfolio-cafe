@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,6 +30,12 @@
           <li class="menu-item"><a href="#shop-info">Shop Info</a></li>
         </ul>
       </nav>
+
+      <div class="sp-open-btn">
+        <span class="sp-open-bar"></span>
+        <span class="sp-open-bar"></span>
+        <span class="sp-open-bar"></span>
+      </div>
     </div>
   </header>
   <!--header end-->
@@ -52,6 +58,20 @@
     </div>
   </div>
   <!--fix-header end-->
+
+  <div class="sp-menu">
+    <ul class="sp-menu-list">
+      <li class="sp-menu-item"><a href="#about">About</a></li>
+      <li class="sp-menu-item"><a href="#news">News</a></li>
+      <li class="sp-menu-item"><a href="#menu">Menu</a></li>
+      <li class="sp-menu-item"><a href="#shop-info">Shop Info</a></li>
+    </ul>
+
+    <div class="sp-close-btn">
+      <span class="sp-close-bar"></span>
+      <span class="sp-close-bar"></span>
+    </div>
+  </div>
    <!--main start-->
   <main>
      <!--mainvisual start-->
@@ -73,36 +93,40 @@
      </div>
       <!--mainvisual end-->
 
-      <div class="container">
-        <!--about start-->
-        <section id="about">
+      <!--about start-->
+      <section id="about">
+        <div class="container">
           <h2 class="sec-title">About</h2>
-          <h3 class="about-title">Dolphin Coffeeは湘南のビーチ沿いにある挽きたての<br>コロンビアコーヒーを楽しめるカフェです。</h3>
+          <h3 class="about-title">Dolphin Coffeeは湘南のビーチ沿いにある挽きたての<br class="pc-only">コロンビアコーヒーを楽しめるカフェです。</h3>
           <p class="about-text">当店ではコロンビア産のコーヒー豆を店内で焙煎し、お出ししているので本格的なコーヒーをお楽しみいただけます。また店内は『全面禁煙』で『Wifi』、『キッズスペース』を備えており、お子様連れのお客様をはじめ、あらゆるお客様にゆっくりお寛ぎいただけます。</p>
-        </section>
-        <!--about end-->
+        </div>
+      </section>
+      <!--about end-->
 
-        <!--news start-->
-        <section id="news">
+      <!--news start-->
+      <section id="news">
+        <div class="container">
+
           <h2 class="sec-title">News</h2>
           <ul class="news-list">
-            <li class="news-item"><a href="javascript:void(0)"><span class="date">2023.XX.XX</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</a></li>
-            <li class="news-item"><a href="javascript:void(0)"><span class="date">2023.XX.XX</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</a></li>
-            <li class="news-item"><a href="javascript:void(0)"><span class="date">2023.XX.XX</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</a></li>
-            <li class="news-item"><a href="javascript:void(0)"><span class="date">2023.XX.XX</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</a></li>
-            <li class="news-item"><a href="javascript:void(0)"><span class="date">2023.XX.XX</span>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</a></li>
+            <li class="news-item"><a href="javascript:void(0)"><span class="date">2023.XX.XX</span><br class="sp-only">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</a></li>
+            <li class="news-item"><a href="javascript:void(0)"><span class="date">2023.XX.XX</span><br class="sp-only">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</a></li>
+            <li class="news-item"><a href="javascript:void(0)"><span class="date">2023.XX.XX</span><br class="sp-only">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</a></li>
+            <li class="news-item"><a href="javascript:void(0)"><span class="date">2023.XX.XX</span><br class="sp-only">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</a></li>
+            <li class="news-item"><a href="javascript:void(0)"><span class="date">2023.XX.XX</span><br class="sp-only">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</a></li>
           </ul>
           <div class="more-btn">
             <a href="javascript:void(0)">ニュース一覧</a>
           </div>
-        </section>
-        <!--news end-->
-      </div>
+        </div>
+      </section>
+      <!--news end-->
       <div class="bg"></div>
 
-      <div class="container">
-        <!--menu start-->
-        <section id="menu">
+      <!--menu start-->
+      <section id="menu">
+        <div class="container">
+
           <h2 class="sec-title">Menu</h2>
           <div class="menu-block">
             <div class="menu menu1">
@@ -130,11 +154,14 @@
           <div class="more-btn">
             <a href="javascript:void(0)">メニュー一覧</a>
           </div>
-        </section>
-        <!--menu end-->
-        <!--shop info start-->
+        </div>
+      </section>
+      <!--menu end-->
 
-        <section id="shop-info">
+      <!--shop info start-->
+      <section id="shop-info">
+        <div class="container">
+
           <h2 class="sec-title">Shop Info</h2>
           <div class="shop-info-inner">
             <div class="shop-info-img">
@@ -150,7 +177,7 @@
               <li class="shop-info-item">
                 <dl class="shop-info-text">
                   <dt>電話番号</dt>
-                  <dd>012-3456-7890</dd>
+                  <dd><a class="tel">012-3456-7890</a></dd>
                 </dl>
               </li>
               <li class="shop-info-item">
@@ -168,11 +195,11 @@
             </ul>
           </div>
           <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10949.410618525784!2d139.39632110493184!3d35.323886367001975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f3!3m3!1m2!1s0x6018528215aa22a3%3A0x8a5ff6b1e9494bd3!2z44CSMjUzLTAwNTUg56We5aWI5bed55yM6IyF44O25bSO5biC5Lit5rW35bK477yT5LiB55uu77yR77yR4oiS77yS77yQIOODm-ODhuODq-ODtOOCo-OCr-ODiOODquOCouODquOCvuODvOODiA!5e0!3m2!1sja!2sjp!4v1678419595691!5m2!1sja!2sjp?&ll=35.3244752,139.3964294" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2659.5559571500535!2d139.3998483231454!3d35.319921811753645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018528215aa22a3%3A0x8a5ff6b1e9494bd3!2z44CSMjUzLTAwNTUg56We5aWI5bed55yM6IyF44O25bSO5biC5Lit5rW35bK477yT5LiB55uu77yR77yR4oiS77yS77yQIOODm-ODhuODq-ODtOOCo-OCr-ODiOODquOCouODquOCvuODvOODiA!5e0!3m2!1sja!2sjp!4v1678774324709!5m2!1sja!2sjp" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-        </section>
-          <!--shop info end-->
-      </div>
+        </div>
+      </section>
+      <!--shop info end-->
    </main>
    <!--main end-->
    <div class="return-btn">
@@ -182,7 +209,9 @@
    </div>
    <!--footer start-->
    <footer>
-    <div class="footer-top-img"></div>
+    <div class="footer-top-img">
+      <img src="./img/footer.jpg" alt="">
+    </div>
    
     <ul class="footer-nav-list">
       <li class="footer-nav-item">

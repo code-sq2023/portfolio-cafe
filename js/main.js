@@ -1,6 +1,6 @@
 $(function() {
   
-  //ヘッダーを途中から固定する
+  //ヘッダーをaboutセクションから固定する
   
   let headerShow = () => {
     let AboutPos = $(".mainvisual").offset().top;
@@ -8,12 +8,14 @@ $(function() {
     let referencePos = AboutPos + mainvisualHeight;
     let currentPos = $(this).scrollTop();
     
-    if(currentPos > referencePos) {
-      $(".fix-header").addClass("show");
-      $(".return-btn").addClass("show");
-    }else {
-      $(".fix-header").removeClass("show");
-      $(".return-btn").removeClass("show");
+    if((window.matchMedia("(min-width: 769px)").matches)) {
+      if(currentPos > referencePos) {
+        $(".fix-header").addClass("show");
+        $(".return-btn").addClass("show");
+      }else {
+        $(".fix-header").removeClass("show");
+        $(".return-btn").removeClass("show");
+      }
     }
   }
   $(window).on("load resize", () => {
@@ -24,7 +26,7 @@ $(function() {
     headerShow();
   });
 
-  //リンクをクリックするとそのセクショントップまでスクロースする
+  //リンクをクリックするとそのセクションまでスクロールする
 
   $("a[href^='#']").on("click", (e) => {
     let ajust = 0;
@@ -37,6 +39,20 @@ $(function() {
 
   });
 
+  //メニューを開閉(SP) 
+
+  $(".sp-open-btn").on("click", () => {
+    $(".sp-menu").addClass("active");
+  });
+
+  $(".sp-close-btn").on("click", () => {
+    $(".sp-menu").removeClass("active");
+  });
+
+  //メニューリンクをクリックすると閉じる
+    $(".sp-menu-item").children("a").on("click", () => {
+      $(".sp-menu").removeClass("active");
+    });
   /*メインビジュアルのスライダー設定*/
 
   $(".mainvisual-list").slick({

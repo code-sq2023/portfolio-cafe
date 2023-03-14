@@ -8,6 +8,7 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
   box-sizing: border-box;
   color: #333;
+  overflow-x: hidden;
 }
 
 img {
@@ -81,7 +82,7 @@ a {
   height: 60px;
   border-radius: 50%;
   border: 1px solid #16335B;
-  background-color: #FFF;
+  background-color: rgba(255, 255, 255, .6);
   bottom: 70px;
   right: 30px;
   transition: all 0.5s ease;
@@ -123,6 +124,10 @@ a {
   transform: rotate(45deg);
   left: 25px;
 }
+
+main{
+  /* background-color: #FFF; */
+}
 /*********************************************************************
 header fix-header
 *********************************************************************/
@@ -138,7 +143,7 @@ header , .fix-header{
   top: -90px;
   transition: all 0.5s ease;
   opacity: 0;
-  z-index: 20;
+  z-index: 50;
 }
 
 .fix-header.show {
@@ -187,6 +192,18 @@ header , .fix-header{
   opacity: 0.7;
 }
 
+.sp-open-btn {
+  display: none;
+}
+
+.sp-menu{
+  display: none;
+  transform: translateX(100%);
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 /*********************************************************************
 mainvisual
 *********************************************************************/
@@ -244,7 +261,9 @@ news
   font-size: 1.1rem;
   line-height: 2;
 }
-
+.sp-only {
+  display: none;
+}
 .date {
   margin-right: 20px; 
 }
@@ -254,15 +273,24 @@ bg
 *********************************************************************/
 
 .bg {
+  width: 100%;
+  height: 300px;
+  background-color: transparent;
+}
+
+.bg::before{
+  content: "";
   background: url("../img/bg.jpg");
-  background-attachment: fixed;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: fixed;
   width: 100%;
-  height: 300px;
+  height:100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
-
 /*********************************************************************
 menu
 *********************************************************************/
@@ -334,7 +362,9 @@ shop info
 .shop-info-img {
   width: 35%;
 }
-
+.shop-info-img img {
+  object-fit: cover;
+}
 .shop-info-list {
   width: 60%;
 }
@@ -358,38 +388,46 @@ dd {
   padding: 15px 0;
 }
 
+.tel {
+  pointer-events: none;
+  color: #333 !important;
+}
+
 .map {
   position: relative;
-  padding-top: 30%;
+  padding-top: 40%;
   height: 0;
 }
 
 iframe {
   position: absolute;
   width: 100%;
-  max-height: 300px;
+  height: 100%;
   top: 0;
   left: 0;
 }
 
 
 /*********************************************************************
-shop info
+footer
 *********************************************************************/
 footer {
   background-color: #FFF;
   padding-bottom: 30px;
 }
 .footer-top-img {
-  background-image: url("../img/footer.jpg");
-  background-size: cover;
-  background-position: 50% 70%;
   width: 100%;
-  height: 250px;
-  box-shadow: inset 0px 18px 10px -10px #FFF;
+  max-height: 250px;
   margin-bottom: 30px;
 }
-
+.footer-top-img img {
+  box-shadow: inset 0px 18px 10px -10px #FFF;
+  width: 100%;
+  height: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  object-position: 50% 70%;
+}
 .footer-nav-list {
   display: flex;
   justify-content: center;
@@ -447,4 +485,217 @@ footer {
 .copyright {
   font-size: 0.625rem;
   text-align: center;
+}
+
+/*********************************************************************
+SP
+*********************************************************************/
+
+@media(max-width: 768px) {
+  .sec-title {
+    font-size: 2rem;
+  }
+  .container {
+    padding: 0 15px;
+  }
+  .more-btn {
+    margin: 30px 0px 0 0;
+  }
+  .more-btn a{
+    font-size: 1.1rem;
+    width: 140px;
+    height: 30px;
+    line-height: 30px;
+  }
+ /*********************************************************************
+  header
+  *********************************************************************/
+  header {
+    position: fixed;
+    z-index: 1;
+    height: 60px;
+  }
+  .header-inner{
+    padding: 0 15px;
+  }
+  .logo {
+    width: 140px;
+    height: 40px;
+  }
+  .fix-header {
+    display: none;
+  }
+  .sp-open-btn{
+    display: block;
+    width: 30px;
+    height: 25px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .sp-open-bar {
+    width: 100%;
+    height: 3px;
+    background-color: #FFF;
+    position: absolute;
+  }
+
+  .sp-open-bar:nth-child(1) {
+    top: 0;
+  }
+  .sp-open-bar:nth-child(2) {
+    top: 11px;
+  }
+  .sp-open-bar:nth-child(3) {
+    top: 22px;
+  }
+  .menu-list {
+    display: none;
+  }
+  .sp-menu {
+    z-index: 1;
+    background-color: #16335B;
+    width: 100%;
+    height: 100%;
+    transition: all 0.7s ease;
+    opacity: 0;
+    display: flex;
+  }
+  
+  .sp-menu-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .sp-menu-item:not(:last-child) {
+    margin: 0 0 20px 0;
+  }
+
+  .sp-menu-item a{
+    font-family: "Antonio", sans-serif;
+    color: #FFF;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    opacity: 1;
+  }
+  .sp-menu-item a:hover{
+    opacity: 0.7;
+  }
+  .sp-menu.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .sp-close-btn {
+    width: 30px;
+    height: 25px;
+    top: 15px;
+    right: 15px;
+    position: relative;
+  }
+
+  .sp-close-bar {
+    width: 100%;
+    height: 3px;
+    background-color: #FFF;
+    position: absolute;
+    cursor: pointer;
+  }
+  .sp-close-bar:nth-child(1) {
+    transform: translateY(11px) rotate(-45deg);
+  }
+  .sp-close-bar:nth-child(2) {
+    transform: translateY(11px) rotate(45deg);
+  }
+  /*********************************************************************
+  mainvisual
+  *********************************************************************/
+  .mainvisual {
+    padding-top: 60px;
+  }
+
+  .slick-slide {
+    max-height: 350px;
+  }
+  /*********************************************************************
+  about
+  *********************************************************************/
+  #about {
+    padding-top: 60px;
+  }
+  .about-title {
+    font-size: 1.6rem;
+  }
+
+  .pc-only {
+    display: none;
+  }
+
+  /*********************************************************************
+  news
+  *********************************************************************/
+  #news {
+    padding: 60px 0;
+  }
+  .news-item {
+    padding: 10px;
+  }
+  .news-item a {
+    font-size: 1rem;
+  line-height: 1.3;
+  }
+  .sp-only {
+    display: block;
+  }
+
+  /*********************************************************************
+  bg
+  *********************************************************************/
+.bg {
+  height: 200px;
+  }
+  /*********************************************************************
+  menu
+  *********************************************************************/
+  #menu {
+    padding-top: 60px;
+  } 
+
+  .menu-block {
+    grid-template-rows: 1fr 1fr 150px 1fr 1fr;
+  }
+  /*********************************************************************
+  shop info
+  *********************************************************************/
+  #shop-info {
+    padding: 60px 0;
+  }
+
+  .shop-info-inner{
+    flex-direction: column;
+  }
+
+  .shop-info-img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .shop-info-list {
+    width: 100%;
+  }
+
+  .shop-info-text {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  dt, dd {
+    padding: 0;
+  } 
 }
