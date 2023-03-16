@@ -5,11 +5,11 @@ $(function() {
   let headerShow = () => {
     let AboutPos = $(".mainvisual").offset().top;
     let mainvisualHeight = $(".mainvisual").outerHeight();
-    let referencePos = AboutPos + mainvisualHeight;
+    let checkPos = AboutPos + mainvisualHeight;
     let currentPos = $(this).scrollTop();
     
     if((window.matchMedia("(min-width: 769px)").matches)) {
-      if(currentPos > referencePos) {
+      if(currentPos > checkPos) {
         $(".fix-header").addClass("show");
         $(".return-btn").addClass("show");
       }else {
@@ -18,12 +18,31 @@ $(function() {
       }
     }
   }
+
+  //bgが画面の下に来ると表示する
+
+  let bgShow = () => {
+    $(".bg").css("background-color, #FFF");
+    let bgPos = $(".bg").offset().top;
+    let bgHeight = $(".bg").outerHeight();
+    let  windowHeight = $(window).height();
+    let checkTop = bgPos - windowHeight - 50;
+    let checkBottom =  checkTop + bgHeight + windowHeight;
+    let currentPos = $(this).scrollTop();
+    if(checkTop < currentPos && checkBottom > currentPos) {
+      $(".bg").addClass("show");
+    }else {
+      $(".bg").removeClass("show");
+    }
+  }
   $(window).on("load resize", () => {
     headerShow();
+    bgShow();
   });
   
   $(window).on("scroll", () => {
     headerShow();
+    bgShow();
   });
 
   //リンクをクリックするとそのセクションまでスクロールする
