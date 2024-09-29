@@ -4,26 +4,42 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="架空のカフェのウェブサイトです">
   <title>Dolphin Coffee</title>
   <!-- reset.css ress -->
-  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./libs/slick-theme.css">
   <link rel="stylesheet" href="./libs/slick.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="icon" href="./img/favicon.ico">
 </head>
 <body>
+  <!-- loading -->
+  <div class="loading">
+    <div class="loading-logo">
+      <img src="./img/logo.png" alt="">
+      <div class="logo-mask"></div>
+    </div>
+    <div class="loading-animation">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
   <!--header start-->
   <header>
     <div class="header-inner">
       <h1 class="logo">
-        <a href="#">
+        <a href="./index.html">
           <img src="./img/logo.png" alt="Dolphin Coffee">
         </a>
       </h1>
 
       <nav>
         <ul class="menu-list">
+          <li class="menu-item"><a href="#">Home</a></li>
           <li class="menu-item"><a href="#about">About</a></li>
           <li class="menu-item"><a href="#news">News</a></li>
           <li class="menu-item"><a href="#menu">Menu</a></li>
@@ -50,6 +66,7 @@
       </div>
   
       <ul class="menu-list">
+        <li class="menu-item"><a href="#">Home</a></li>
         <li class="menu-item"><a href="#about">About</a></li>
         <li class="menu-item"><a href="#news">News</a></li>
         <li class="menu-item"><a href="#menu">Menu</a></li>
@@ -61,6 +78,7 @@
 
   <div class="sp-menu">
     <ul class="sp-menu-list">
+      <li class="sp-menu-item"><a href="#">Home</a></li>
       <li class="sp-menu-item"><a href="#about">About</a></li>
       <li class="sp-menu-item"><a href="#news">News</a></li>
       <li class="sp-menu-item"><a href="#menu">Menu</a></li>
@@ -121,7 +139,10 @@
         </div>
       </section>
       <!--news end-->
-      <div class="bg"></div>
+
+      <div class="bg-wrapper">
+        <div class="bg"></div>
+      </div>
 
       <!--menu start-->
       <section id="menu">
@@ -152,7 +173,7 @@
             </div>
           </div>
           <div class="more-btn">
-            <a href="javascript:void(0)">メニュー一覧</a>
+            <a href="./product.html">メニュー一覧</a>
           </div>
         </div>
       </section>
@@ -171,13 +192,13 @@
               <li class="shop-info-item">
                 <dl class="shop-info-text">
                   <dt>住所</dt>
-                  <dd>〒111-2222 神奈川兼茅ヶ崎市1-1-1</dd>
+                  <dd>〒111-2222 神奈川県茅ヶ崎市1-1-1</dd>
                 </dl>
               </li>
               <li class="shop-info-item">
                 <dl class="shop-info-text">
                   <dt>電話番号</dt>
-                  <dd><a class="tel">012-3456-7890</a></dd>
+                  <dd><a class="tel" href="tel:000-000-0000">000-000-0000</a></dd>
                 </dl>
               </li>
               <li class="shop-info-item">
@@ -214,6 +235,9 @@
     </div>
    
     <ul class="footer-nav-list">
+      <li class="footer-nav-item">
+        <a href="#">Home</a>
+      </li>
       <li class="footer-nav-item">
         <a href="#about">About</a>
       </li>

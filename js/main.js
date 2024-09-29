@@ -1,11 +1,17 @@
 $(function() {
-  
+  //ローディングアニメーションを非表示にする
+
+  $(window).on("load", () => {
+    setTimeout(() => {
+      $(".loading").addClass("loaded");
+    }, 3000)
+  });
   //ヘッダーをaboutセクションから固定する
   
   let headerShow = () => {
-    let AboutPos = $(".mainvisual").offset().top;
-    let mainvisualHeight = $(".mainvisual").outerHeight();
-    let checkPos = AboutPos + mainvisualHeight;
+    let targetPos = $(".mainvisual, .product-bg-wrapper").offset().top;
+    let targetHeight = $(".mainvisual, .product-bg-wrapper").outerHeight();
+    let checkPos = targetPos + targetHeight;
     let currentPos = $(this).scrollTop();
     
     if((window.matchMedia("(min-width: 769px)").matches)) {
@@ -19,32 +25,12 @@ $(function() {
     }
   }
 
-  //bgが画面の下に来ると表示する
-
-  let bgShow = () => {
-    let bgPos = $(".bg").offset().top;
-    let bgHeight = $(".bg").outerHeight();
-    let  windowHeight = $(window).height();
-    let checkTop = bgPos - windowHeight - 50;
-    let checkBottom =  checkTop + bgHeight + windowHeight;
-    let currentPos = $(this).scrollTop();
-   
-    if(checkTop < currentPos && checkBottom > currentPos) {
-      $(".bg").addClass("show");
-    }else {
-      $(".bg").removeClass("show");
-    }
-  }
-
-
   $(window).on("load resize", () => {
     headerShow();
-    bgShow();
   });
   
   $(window).on("scroll", () => {
     headerShow();
-    bgShow();
   });
 
   //リンクをクリックするとそのセクションまでスクロールする
