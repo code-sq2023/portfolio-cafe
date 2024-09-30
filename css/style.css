@@ -676,7 +676,7 @@ product
   max-width: 1080px;
   min-width: 600px;
   margin: 0 auto;
-  padding: 120px 60px;
+  padding: 160px 60px;
   border-radius: 20px;
 }
 
@@ -974,6 +974,7 @@ SP
 
   .product-container{
     min-width: auto;
+    padding: 90px 60px;
   }
   
   .product-price {

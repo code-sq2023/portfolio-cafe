@@ -1,11 +1,5 @@
 $(function() {
-  //ローディングアニメーションを非表示にする
-
-  $(window).on("load", () => {
-    setTimeout(() => {
-      $(".loading").addClass("loaded");
-    }, 3000)
-  });
+  
   //ヘッダーをaboutセクションから固定する
   
   let headerShow = () => {
@@ -75,4 +69,12 @@ $(function() {
     pauseOnHover:false,
   })
 
+});
+
+//ローディングアニメーションを非表示にする
+ 
+$(window).on("load", () => {
+  setTimeout(() => {
+    $(".loading").addClass("loaded");
+  }, 3000)
 });
