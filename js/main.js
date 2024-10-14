@@ -1,21 +1,36 @@
 $(function() {
-  
-  //ヘッダーをaboutセクションから固定する
+  //ローディングアニメーションを非表示にする
+ 
+$(window).on("load", () => {
+  setTimeout(() => {
+    $(".loading").addClass("loaded");
+  }, 1800)
+});
+
+  //ヘッダーを固定する
   
   let headerShow = () => {
-    let targetPos = $(".mainvisual, .product-bg-wrapper").offset().top;
-    let targetHeight = $(".mainvisual, .product-bg-wrapper").outerHeight();
+    if(location.href == "https://localhost:5500/index.html"){
+    let targetPos = $(".mainvisual").offset().top;
+    let targetHeight = $(".mainvisual").outerHeight();
     let checkPos = targetPos + targetHeight;
     let currentPos = $(this).scrollTop();
+    header_btn_show(checkPos, currentPos);
+  }else {
+    let checkPos = 80;
+    let currentPos = $(this).scrollTop();
+    header_btn_show(checkPos, currentPos);
+    }
     
-    if((window.matchMedia("(min-width: 769px)").matches)) {
-      if(currentPos > checkPos) {
-        $(".fix-header").addClass("show");
-        $(".return-btn").addClass("show");
-      }else {
-        $(".fix-header").removeClass("show");
-        $(".return-btn").removeClass("show");
-      }
+  }
+  
+  function header_btn_show(checkPos, currentPos) {
+    if(currentPos > checkPos) {
+      $(".fix-header").addClass("show");
+      $(".return-btn").addClass("show");
+    }else {
+      $(".fix-header").removeClass("show");
+      $(".return-btn").removeClass("show");
     }
   }
 
@@ -71,10 +86,3 @@ $(function() {
 
 });
 
-//ローディングアニメーションを非表示にする
- 
-$(window).on("load", () => {
-  setTimeout(() => {
-    $(".loading").addClass("loaded");
-  }, 3000)
-});

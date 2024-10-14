@@ -37,24 +37,28 @@ a {
   font-weight: 700;
   margin-bottom: 60px;
 }
-.more-btn {
-  text-align: right;
-  margin: 30px 30px 0 0;
+.more-btn{
+  text-align: center;
+  margin-top: 60px;
 }
 
-.more-btn a{
+.back-btn {
+  text-align: center;
+}
+
+.more-btn a, .back-btn a{
   display: inline-block;
-  width: 180px;
-  height: 40px;
   line-height: 40px;
   text-align: center;
   position: relative;
   color: #333;
-  font-size: 1.4rem;
+  font-size: 1.125rem;
 }
 
 .more-btn a::before,
-.more-btn a::after{
+.more-btn a::after,
+.back-btn a::before,
+.back-btn a::after{
   content: "";
   position: absolute;
   width: 100%;
@@ -63,22 +67,29 @@ a {
 }
 
 .more-btn a::before,
-.more-btn a::after {
+.more-btn a::after,
+.back-btn a::before,
+.back-btn a::after {
   background: #333;
 }
 
-.more-btn a::before{
+.more-btn a::before,
+.back-btn a::before{
   top: 0;
   left: 0;
 }
 
-.more-btn a::after{
+.more-btn a::after,
+.back-btn a::after{
   bottom: 0;
   right: 0;
 }
 
 .more-btn a:hover::before,
-.more-btn a:hover::after{
+.more-btn a:hover::after,
+.back-btn a:hover::before,
+.back-btn a:hover::after
+{
   width: 0;
 }
 
@@ -90,7 +101,7 @@ a {
   border: 1px solid var(--main-color);
   background-color: rgba(255, 255, 255, .6);
   bottom: 70px;
-  right: 30px;
+  right: 25px;
   transition: all 0.5s ease;
   opacity: 0;
   visibility: hidden;
@@ -267,7 +278,7 @@ loading
   }
 }
 /*********************************************************************
-header fix-header
+header
 *********************************************************************/
 
 header , .fix-header{
@@ -378,6 +389,10 @@ about
   line-height: 1.3;
 }
 
+.about-text {
+  font-size: 1.125rem;
+  line-height: 2;
+}
 /*********************************************************************
 news
 *********************************************************************/
@@ -388,16 +403,25 @@ news
 }
 .news-item {
   border-bottom: 1px solid #CCC;
-  padding: 20px;
+  
 }
 .news-item:nth-child(1) {
   border-top: 1px solid #CCC;
 }
 
 .news-item a {
+  display: inline-block;
+  width: 100%;
   color: #333;
-  font-size: 1.1rem;
+  font-size: 1.125rem;
   line-height: 2;
+  padding: 20px;
+  background: #FFF;
+  transition: all 0.3s ease;
+}
+
+.news-item a:hover {
+  background: #CCC;
 }
 .sp-only {
   display: none;
@@ -439,7 +463,8 @@ menu
   background-color: #FFF;
 }
 
-.menu-block {
+.menu-link {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 250px 1fr 1fr;
@@ -448,8 +473,12 @@ menu
   "menu1 menu3"
   "menu4 menu4"
   "menu5 menu6"
-  "menu7 menu6"
-  ;
+  "menu7 menu6";
+  transition: all 0.3s ease;
+}
+
+.menu-link:hover {
+  opacity: 0.7;
 }
 .menu img{
   object-fit: cover;
@@ -556,18 +585,22 @@ footer {
 }
 .footer-top-img {
   width: 100%;
-  height: 100%;
+  height: 300px;
   margin-bottom: 30px;
   position: relative;
 }
+
+.footer-top-img img {
+  object-fit: cover;
+  object-position: 50% 70%;
+  height: 100%;
+}
 .footer-top-img::before{
   content: "";
-  position: absolute;
   box-shadow:inset 0px 23px 12px -12px #FFF;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: 50% 70%;
+  position: absolute;
   top: 0;
   left: 0;
 }
@@ -634,81 +667,56 @@ footer {
 product
 *********************************************************************/
 
-.product-bg-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  clip-path: inset(0);
-}
-
-.product-bg-upper {
-  background: url("../img/product-bg1.jpg");
-}
-
-.product-bg-lower {
-  background: url("../img/product-bg2.jpg");
-}
-
-.product-bg{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height:100vh;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover
-}
-
 .product-title {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 5rem;
-  color: #FFF;
-  filter: drop-shadow(1px 1px 10px #383838);
+  font-family: 'Antonio', sans-seif;
+  font-size: 3rem;
+  color: var(--main-color);
+  margin-bottom: 90px;
+
 }
 
 .product-container{
-  background: #FFF;
-  width: 100%;
-  max-width: 1080px;
-  min-width: 600px;
-  margin: 0 auto;
-  padding: 160px 60px;
+  padding: 100px;
+  background:url("../img/product-bg.jpg");
+
+}
+.product-inner {
+  background: linear-gradient(90deg, #FFF 60%, #e9e9e9);
+  padding: 70px 60px;
   border-radius: 20px;
+  border: 5px solid var(--main-color);
+  box-shadow: 10px 10px 20px;
 }
 
 .product-item {
   margin-bottom: 60px;
 }
-
 .product-item-title {
-  font-size: 30px;
+  font-family: 'Antonio', sans-seif;
+  font-size: 2rem;
+  color: var(--main-color);
   margin-bottom: 60px;
-  padding-left: 35px;
+  padding-left: 40px;
   position: relative;
 }
-
 
 .product-item-title::before{
   content: "";
   width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, var(--main-color), #ffffff 70%);
+  height: 3px;
+  background: linear-gradient(to right, var(--main-color), #e9e9e9 70%);
   position: absolute;
   left: 0px;
   bottom: -10px;
 }
 
 .product-icon {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   margin: 10px;
   position: absolute;
-  top: 2px;
-  left: -8px;
+  top: -1px;
+  left: -9px;
 }
 
 dl {
@@ -719,8 +727,9 @@ dl {
 }
 
 .product-name {
-  width: 50%;
-  font-size: 20px;
+  width: 80%;
+  font-size: 1.125rem;
+  color: var(--main-color);
   line-height: 1.5;
   margin-bottom: 10px;
   padding: 10px;
@@ -728,8 +737,9 @@ dl {
 }
 
 .product-price {
-  width: 50%;
-  font-size: 20px;
+  width: 20%;
+  font-size: 1.125rem;
+  color: var(--main-color);
   line-height: 1.5;
   margin-bottom: 10px;
   padding: 10px;
@@ -739,6 +749,94 @@ dl {
 .product-footer {
   padding-top: 60px;
 }
+
+.product-btn a{
+  color: var(--main-color);
+}
+
+.product-btn a::before,
+.product-btn a::after {
+  background: var(--main-color);
+}
+/*********************************************************************
+info
+*********************************************************************/
+.info-container{
+  margin-bottom: 90px;
+  padding: 120px 60px 90px;
+}
+
+.info-title {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 90px;
+} 
+
+.info-title {
+  font-family: 'Antonio', sans-seif;
+}
+
+
+.info-list {
+  margin-bottom: 90px;
+}
+.info-item {
+  border: 1px solid #CCC; 
+  border-radius: 5px;
+  margin-bottom: 30px;
+  background: #FFF;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  background: #CCC;
+}
+.info-item a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  font-size: 1.125rem;
+  color: #333;
+}
+
+
+
+/*********************************************************************
+info-detail
+*********************************************************************/
+.info-detail-container {
+  margin-bottom: 90px;
+  padding: 120px 60px 90px;
+}
+.info-detail-title{
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.info-detail-date {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 90px;
+}
+
+.info-detail-img {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.info-detail-img img {
+  opacity: cover;
+}
+.info-detail-text {
+  font-size: 1.125rem;
+  line-height: 2;
+  color: #333;
+  margin-bottom: 90px;
+}
+
 /*********************************************************************
 SP
 *********************************************************************/
@@ -753,16 +851,32 @@ SP
   .more-btn {
     margin: 30px 0px 0 0;
   }
-  .more-btn a{
-    font-size: 1.1rem;
-    width: 140px;
+  .more-btn a, .back-btn a{
+    font-size: 1rem;
+    /* width: 140px; */
     height: 30px;
     line-height: 30px;
   }
+  .return-btn {
+    width: 40px;
+    height: 40px;
+  }
 
+.arrow::before,
+.arrow::after {
+  width: 15px;
+  top: 17px;
+}
+.arrow::before{
+  left: 7px;
+}
+
+.arrow::after {
+  left: 16px;
+}
  /*********************************************************************
-  header
-  *********************************************************************/
+ header
+*********************************************************************/
   header {
     position: fixed;
     z-index: 1;
@@ -808,11 +922,11 @@ SP
     display: none;
   }
   .sp-menu {
-    z-index: 1;
+    z-index: 20;
     background-color: var(--main-color);
     width: 100%;
     height: 100%;
-    transition: all 0.7s ease;
+    transition: all 0.5s ease;
     opacity: 0;
     display: flex;
   }
@@ -896,12 +1010,11 @@ SP
   #news {
     padding: 60px 0;
   }
-  .news-item {
-    padding: 10px;
-  }
+  
   .news-item a {
     font-size: 1rem;
-  line-height: 1.3;
+    line-height: 1.3;
+    padding: 10px;
   }
   .sp-only {
     display: block;
@@ -952,32 +1065,95 @@ SP
     padding: 0;
   } 
   /*********************************************************************
-  product
+  product 
   *********************************************************************/
-  .product-item-title {
-    font-size: 25px;
-  }
-
-  .product-icon {
-    width: 22px;
-    height: 22px;
-    top: -1px;
-  }
-
-  .product-title {
-    font-size: 3rem;
-  }
-  
-  .product-item-title::before{
-    bottom: -7px;
-  }
 
   .product-container{
     min-width: auto;
-    padding: 90px 60px;
+    padding: 90px 15px;
+  }
+
+  .product-inner {
+    min-width: 100%;
+    padding: 30px 15px;
+    background: linear-gradient(90deg, #FFF 80%, #e9e9e9);
+  } 
+
+  .product-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .product-item-title {
+    font-size: 1.5rem;
+    padding-left: 30px;
+  }
+
+  .product-icon {
+    width: 23px;
+    height: 23px;
+    top: -4px;
+  }
+
+ 
+  
+  .product-item{
+    margin-bottom: 40px;
+  }
+  .product-item-title {
+    margin-bottom: 40px;
+  }
+  .product-item-title::before{
+    bottom: -7px;
   }
   
+  dl {
+    max-width: 100%;
+  }
+  .product-name {
+    font-size: 1rem;
+    width: 75%;
+  }
   .product-price {
-    text-align: right;
+    font-size: 1rem;
+    width: 25%;
+  }
+
+  /*********************************************************************
+  info
+  *********************************************************************/
+  .info-title {
+    font-size: 2rem;
+    margin-bottom: 60px;
+  }
+  .info-container{
+    min-width: auto;
+    padding: 90px 15px;
+  }
+
+  .info-list {
+    margin-bottom: 60px;
+  }
+
+  .info-item a {
+    font-size: 1rem;
+  }
+  /*********************************************************************
+  info-detail
+  *********************************************************************/
+  .info-detail-container {
+    padding: 120px 15px 90px;
+  }
+
+  .info-detail-title {
+    font-size: 1.5rem;
+  }
+
+  .info-detail-date {
+    font-size: 1rem;
+  }
+
+  .info-detail-text {
+    font-size: 1rem;
   }
 }
