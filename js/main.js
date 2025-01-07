@@ -77,12 +77,20 @@ $(window).on("load", () => {
     infinite: true,
     slidesToShow:1,
     centerMode: true,
-    centerPadding: '10%',
+    centerPadding: '20%',
     speed: 700,
     arrows: false,
     draggable: false,
     pauseOnHover:false,
-  })
-
+    pauseOnFocus: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          centerPadding: '10%',
+        }
+      }
+    ]
+  });
 });
 

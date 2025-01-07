@@ -301,7 +301,6 @@ header , .fix-header{
 }
 
 .header-inner{
-  max-width: 1080px;
   height: 100%;
   padding: 0 40px;
   margin: 0 auto;
@@ -364,14 +363,14 @@ mainvisual
 
 .slick-slide {
   width: 100%;
-  max-height: 500px;
+  height: 50vh;
 }
 
 .mainvisual-item img {
   width: 100%;
-  max-height: 500px;
+  height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 40%;
 }
 
 /*********************************************************************
@@ -588,13 +587,12 @@ footer {
   height: 300px;
   margin-bottom: 30px;
   position: relative;
+  background-image: url("../img/footer.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
-.footer-top-img img {
-  object-fit: cover;
-  object-position: 50% 70%;
-  height: 100%;
-}
 .footer-top-img::before{
   content: "";
   box-shadow:inset 0px 23px 12px -12px #FFF;
@@ -853,7 +851,6 @@ SP
   }
   .more-btn a, .back-btn a{
     font-size: 1rem;
-    /* width: 140px; */
     height: 30px;
     line-height: 30px;
   }
@@ -988,6 +985,7 @@ SP
   }
 
   .slick-slide {
+    height: 30vh;
     max-height: 350px;
   }
   /*********************************************************************
@@ -1064,6 +1062,15 @@ SP
   dt, dd {
     padding: 0;
   } 
+
+  /*********************************************************************
+  footer
+  *********************************************************************/
+  .footer-top-img {
+    height: 150px;
+    background-position: 50% 60%;
+  }
+
   /*********************************************************************
   product 
   *********************************************************************/
