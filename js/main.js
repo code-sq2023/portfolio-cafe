@@ -7,39 +7,28 @@ $(window).on("load", () => {
   }, 1800)
 });
 
-  //ヘッダーを固定する
+  //戻るボタンを表示する
   
-  let headerShow = () => {
-    if(location.href == "https://localhost:5500/index.html"){
-    let targetPos = $(".mainvisual").offset().top;
-    let targetHeight = $(".mainvisual").outerHeight();
-    let checkPos = targetPos + targetHeight;
+  let returnBtn_Show = () => {
+    const checkPos = 80;
     let currentPos = $(this).scrollTop();
-    header_btn_show(checkPos, currentPos);
-  }else {
-    let checkPos = 80;
-    let currentPos = $(this).scrollTop();
-    header_btn_show(checkPos, currentPos);
-    }
-    
+    showPosition(checkPos, currentPos);
   }
   
-  function header_btn_show(checkPos, currentPos) {
+  function showPosition(checkPos, currentPos) {
     if(currentPos > checkPos) {
-      $(".fix-header").addClass("show");
       $(".return-btn").addClass("show");
     }else {
-      $(".fix-header").removeClass("show");
       $(".return-btn").removeClass("show");
     }
   }
 
-  $(window).on("load resize", () => {
-    headerShow();
+  $(window).on("load", () => {
+    returnBtn_Show();
   });
   
   $(window).on("scroll", () => {
-    headerShow();
+    returnBtn_Show();
   });
 
   //リンクをクリックするとそのセクションまでスクロールする

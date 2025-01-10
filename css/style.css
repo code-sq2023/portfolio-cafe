@@ -281,23 +281,10 @@ loading
 header
 *********************************************************************/
 
-header , .fix-header{
+header {
   width: 100%;
   height: 90px;
   background-color: var(--main-color);
-}
-
-.fix-header {
-  position: fixed;
-  top: -90px;
-  transition: all 0.5s ease;
-  opacity: 0;
-  z-index: 50;
-}
-
-.fix-header.show {
-  top: 0;
-  opacity: 1;
 }
 
 .header-inner{
@@ -445,7 +432,7 @@ bg
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width:100%;
   height:100%;
   background-repeat: no-repeat;
   background-position: center top;
@@ -531,6 +518,7 @@ shop info
 }
 .shop-info-img img {
   object-fit: cover;
+  height: auto;
 }
 .shop-info-list {
   width: 60%;
@@ -560,18 +548,12 @@ dd {
   color: #333 !important;
 }
 
-.map {
-  position: relative;
-  padding-top: 40%;
-  height: 0;
-}
-
-iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+.map iframe {
+  width:100%;
+  height: auto;
+  max-height: 500px;
+  min-height: 300px;
+  aspect-ratio: 4/3;
 }
 
 
@@ -826,7 +808,9 @@ info-detail
 }
 
 .info-detail-img img {
-  opacity: cover;
+  height: auto;
+  aspect-ratio: 800/533;
+  object-fit: cover;
 }
 .info-detail-text {
   font-size: 1.125rem;
@@ -886,9 +870,7 @@ SP
     width: 140px;
     height: 40px;
   }
-  .fix-header {
-    display: none;
-  }
+  
   .sp-open-btn{
     display: block;
     width: 30px;
